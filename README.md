@@ -35,10 +35,6 @@ Antes de rodar a aplicação, é necessário configurar as variáveis de ambient
    DB_USERNAME=user
    DB_PASSWORD=123
    ```
-3. Gere a chave da aplicação Laravel:
-   ```bash
-   docker-compose exec app php artisan key:generate
-   ```
 
 ### **4️⃣ Subir a Aplicação com Docker**
 ```bash
@@ -51,14 +47,20 @@ Este comando:
   - Backend Laravel rodando em `http://localhost:80`
   - Frontend Vue.js rodando em `http://localhost:8080`
 
-### **5️⃣ Configurar o Banco de Dados e Rodar Migrations**
-Dentro do container do backend, execute:
+### **5️⃣ Gerar a Chave da Aplicação**
+Após subir os containers, execute:
+```bash
+docker-compose exec app php artisan key:generate
+```
+Isso garante que o Laravel tenha uma chave única para criptografia.
+
+### **6️⃣ Configurar o Banco de Dados e Rodar Migrations**
 ```bash
 docker-compose exec app php artisan migrate --seed
 ```
 Isso cria as tabelas do banco e insere dados fake para testes.
 
-### **6️⃣ Acessar a Aplicação**
+### **7️⃣ Acessar a Aplicação**
 - **Frontend:** `http://localhost:8080`
 - **Backend (API):** `http://localhost:80/api`
 

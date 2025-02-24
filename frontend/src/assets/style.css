@@ -1,0 +1,117 @@
+/* Estilo geral da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container centralizado */
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Títulos */
+h1 {
+  color: #007BFF;
+}
+
+/* Botões */
+.button-group {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Tabelas */
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Ajuste dos gráficos */
+.chart-container {
+  width: 100%;
+  max-width: 1040px;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pie-chart {
+  max-width: 400px; /* Limita o tamanho do gráfico de pizza */
+}
+
+/* Estilo dos filtros */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-container label {
+  align-content: center;
+}
+
+.filter-container input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 8px 15px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-container {
+  margin-bottom: 1rem;
+}

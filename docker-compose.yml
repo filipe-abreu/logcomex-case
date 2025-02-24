@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ./backend
+      dockerfile: ../docker/php/Dockerfile
+    container_name: php-app
+    volumes:
+      - ./backend:/var/www
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_DATABASE: logcomex
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
+      MYSQL_ROOT_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+
+  nginx:
+    build:
+      context: ./docker/nginx
+    container_name: nginx
+    volumes:
+      - ./backend:/var/www
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #   container_name: vue-frontend
+  #   ports:
+  #     - "8080:80"
+  #   networks:
+  #     - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vue-frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    command: ["npm", "run", "serve"]
+
+volumes:
+  dbdata:
+
+networks:
+  app-network:
+    driver: bridge

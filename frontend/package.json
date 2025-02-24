@@ -1,0 +1,19 @@
+{
+  "name": "logcomex-case-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Logcomex Case",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "vue": "^3.2.0",
+    "axios": "^1.3.0",
+    "chart.js": "^4.0.0",
+    "vue-router": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.2.0"
+  }
+}
